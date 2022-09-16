@@ -6,27 +6,11 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
 
-    <script>
-                document.addEventListener("DOMContentLoaded", function() {
-           const exampleTarget = document.querySelector('#example-target');
-
-
-      // detect target found
-      exampleTarget.addEventListener("targetFound", event => {
-        console.log("target found");
-        alert("Hello! I am an alert box!");
-      });
-      // detect target lost
-      exampleTarget.addEventListener("targetLost", event => {
-        console.log("target lost");
-      });
-
-                }
-    </script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
   </head>
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: https://cdn.glitch.global/3ba75b05-ccf3-4dde-92cc-bcd698f47eb6/targets.mind?v=1663318196241"
+      mindar-image="imageTargetSrc: https://cdn.glitch.global/3ba75b05-ccf3-4dde-92cc-bcd698f47eb6/finalTar.mind?v=1663334533624"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
@@ -41,7 +25,7 @@
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-      <a-entity id="example-target" mindar-image-target="targetIndex: 0">
+      <a-entity id="example-target" mindar-image-target="targetIndex: 0" on>
         <a-gltf-model
           rotation="90 0 0 "
           position="0  0.25 0"
@@ -50,17 +34,30 @@
           animation-mixer
         />
       </a-entity>
-
-      <!--   // sound="src: url(https://cdn.glitch.global/3ba75b05-ccf3-4dde-92cc-bcd698f47eb6/file_example_MP3_700KB.mp3?v=1663310732180); autoplay: true"     -->
-
-      <!--        <a-entity
-        id="river"
-        geometry="primitive: plane"
-        material="color: blue"
-        position="-10 0 0"
-        sound="src: url(https://cdn.glitch.global/3ba75b05-ccf3-4dde-92cc-bcd698f47eb6/file_example_MP3_700KB.mp3?v=1663310732180); autoplay: true"
-      >
-      </a-entity> -->
     </a-scene>
+
+    <script>
+      //       document.addEventListener("DOMContentLoaded", function () {
+      //         const examplePlane = document.querySelector("#example-plane");
+
+      //         const exampleTarget = document.querySelector("#example-target");
+
+      //         var myAudio = document.querySelector("#myAudio");
+
+      //         console.log("okkkk  myAudio", myAudio);
+
+      //         // detect target found
+      //         exampleTarget.addEventListener("targetFound", (event) => {
+      //           console.log("target found");
+
+      //           myAudio.play();
+      //         });
+              // // detect target lost
+              // exampleTarget.addEventListener("targetLost", (event) => {
+              //   console.log("target lost");
+              //   myAudio.pause();
+              // });
+            });
+    </script>
   </body>
 </html>
